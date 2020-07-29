@@ -1,0 +1,48 @@
+num = 29
+attempts = 1
+solution = num
+name = input("Hi what is your name?\n")
+"\n"
+print("Hi" ,name,"\n")
+#rules
+print("The rules of this game are:")
+print("The computer will choose a number between 1 to 100. Then the user will try to guess the right number.")
+print("If the user failed to enter the random number chosen by the computer then the user will get a hint.")
+print("The hints will be like these:")
+print("The number you've inputted is larger than the number")
+print("The number you've inputted is smaller than the number")
+print("With the help of these hints, you have to find the random number choose by the computer.")
+print("Also,you only have 10 attempts")
+
+#defining what happens if we type no/yes repestively
+yn = input("\nWould you like to play the game(yes/no)\n")
+"\n"
+if yn == ("no"):
+  print("Okay, goodbye!")
+  print("See you again soon!")
+if yn == ("yes"):  
+ print("\nready!")
+ print(3)
+ print(2)
+ print(1)
+while yn == ("yes"):  
+#giving number of chances as attempts
+ if attempts <= 10:
+   guess = int(input("Take a guess:\n"))
+   if guess > num:
+     print("The number you've inputted is larger than the number,you have",10 - attempts,"attempts left\n")
+     attempts += 1  
+   elif guess < num:
+     print("The number you've inputted is smaller than the number,you have",10 - attempts,"attempts left\n")
+     attempts += 1  
+   elif guess == num:
+       print("Congrats!,you won :)")  
+       print("You cracked the code in ",attempts,"attempts")
+       break
+   if  attempts == 11: 
+     print("You are out of attempts :(")
+     print("The correct number was",num)
+     print("Please restart to play again :(")
+     #breaking the while loop when answer is right
+     break
+print("Thank you for playing")
